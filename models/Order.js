@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
 
 const OrderSchema = new mongoose.Schema({
-    name: {
+    clientName: {
         type: String,
-        required: true, 
+        required: false, 
     },
     size: {
         type: String,
@@ -25,19 +25,15 @@ const OrderSchema = new mongoose.Schema({
         type: Date,
         default: Date.now,
     },
-    square: {
+    orderStatus: {
         type: String,
-        required: false,
-      },
-    orderFulfilled: {
-        type: Date, 
-        required: false,  
-        default: null, 
-    }, 
-    fulFilledBy: {
+        required: true,
+        default:'pending'
+    },
+    baristaName: {
         type: String, 
-        required: false,  
-        default: null,
+        required: false, 
+        default: ""
     }
 })
 

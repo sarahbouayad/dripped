@@ -8,34 +8,58 @@
               <a href="/logout" class="col-3 btn btn-primary">Logout</a>
           </div>
           <div class="mt-5">
-            <h2>Orders</h2>
-            <% for(var i=0; i<orders.length; i++) { %>
-              <li class="col-6 justify-content-between mt-5">
-                <%= orders[i].size %>
-                <%= orders[i].coffeeType %>
-                <%= orders[i].milkOptions %>
-                <%= orders[i].flavorShot %>
+            <h2>Unfulfilled Orders</h2>
+            <h6>Once order is ready, mark it as complete</h6>
+            <br>
+            <hr>
+            <% if(orders.length == 0) {%>
+              <p class="p">No UnFulfilled Orders! </p>
+            <%} %>
+            <ul>
+              <% for(var i=0; i<orders.length; i++) { %>
+                <div class="unfulfilledOrders">
+                <li class="col-6 justify-content-between mt-5">
+                  <span>Name: <%= orders[i].clientName %></span>
+                  <%= orders[i].size %> <%= orders[i].flavorShot %> <%= orders[i].milkOptions %> <%= orders[i].coffeeType %> 
 
-                <% if(orders[i].square===true) { %>
-                  <span><i class="fa-solid fa-square-check square-check squareBox" onclick='clickButton(event)' data-square="true"
-                      aria-hidden="true"></i></span>
-                  <% } else { %>
-                    <span><i class="fa-regular fa-square square-regular squareBox" data-square="false"
-                        aria-hidden="true"></i></span>
-                    <% } %>
-  
-                      <span><i class="fa fa-trash-o" aria-hidden="true"></i></span>
-              </li>
-              <% } %> 
+
+                  <form 
+                    class="col-1"
+                    action="/orders/completedOrder/<%= orders[i].id %>?_method=PUT"
+                    method="POST"
+                  >
+                  <button class="btn btn-primary bi bi-check-square-fill" type="submit"></button>
+                </form>
+
+                </li>
+              </div>
+            <% } %> 
+            </ul>
+          
           </div>
         </div>
       <div class="col-6">
         <ul class="row list-unstyled">
-    
+          <h2>Fulfilled Orders</h2>
+          <h6>Delete the orders after it's picked up.</h6>
+          <br>
+          <br>
+          <hr>
+          <li>
+          <% for(let i=0; i < completedOrder.length; i++) { %>
+            <span><%= completedOrder[i].baristaName%> completed: <%= completedOrder[i].clientName%>'s order</span>
+            <p>Order: <%= completedOrder[i].size %>  <%= completedOrder[i].flavorShot %> <%= completedOrder[i].milkOptions %> <%= completedOrder[i].coffeeType %> </p>
+            <!-- using form to pass the id of the post as a query parameter to be able to target which post to delete -->
+            <form
+            action="/orders/deleteFulfilledOrder/<%= completedOrder[i].id %>?_method=DELETE" 
+            method="POST" 
+            class="col-3"
+            >
+            <button class="btn btn-primary bi bi-trash" type="submit"></button>
+            </form>
+          </li>
+          <% } %> 
         </ul>
-        <div class="row justify-content-center mt-5">
-          <a class="btn btn-primary" href="/feed">Return to Feed</a>
-        </div>  
       </div>  
     </div>
   </div>

@@ -1,4 +1,38 @@
+h1{
+    font-family: 'Luckiest Guy';
+    font-size: 82px;
+    text-align: center;
+
+}
+
 .dripped{
-    color: black; 
     text-decoration: none;
+    color: rgb(212, 196, 186); 
+    padding: 1%;
+}
+
+.list-group-item{
+    background-color: rgba(72, 53, 37, 0.93);
+    font-family: 'Roboto';
+}
+
+.customizeCoffee {
+    font-size: 22px;
+    font-variant: small-caps;
+    color: rgb(227, 225, 222); 
+}
+
+h4{
+   color: rgb(251, 225, 138); 
+   text-align: center;
+   font-family: 'Roboto';
+   font-weight: bold;
+}
+
+select {
+    padding: 1%;
+}
+
+hr{
+    color: white;
 }

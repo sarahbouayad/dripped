@@ -15,113 +15,139 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Roboto:wght@100;300&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/43daf91e79.js" crossorigin="anonymous"></script>
 </head>
 
-<body class="drippedBody">
-    <header class="container">
-        <div class="text-center">
-            <h1><a href="/profile" class="dripped">Dripped</a></h1>
-            <span>Your Neighborhood Barista App</span>
+<body class="drippedBody" style="
+background-image: url('/imgs/coffee.gif'); background-size: cover; background-repeat: no-repeat;">
+    <nav class="navbar">
+        <div class="navbar-item">
+            <i class="bi bi-cup"></i>
+            <a href="/index" class="navbar-right btn btn-warning my-2 my-sm-0">Dripped Employee Login</a>
         </div>
-        <div class="row">
-            <div class="col-sm-3">
-                <div class="card">
-                    <div class="card-header text-center">
-                        Dripped Baristas
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Employee Login</h5>
-                        <a href="/index" class="btn btn-primary">Go To App</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+    </nav>
+
+
+
     <div class="container">
         <div class="container-fluid">
-            <div class="p-5 text-center bg-image rounded-3" style="
-        background-image: url('/imgs/coffeebeans.jpg'); background-size: cover; background-repeat: no-repeat;">
-                <div class="mask rounded-3" style="background-color: rgba(110, 110, 110, 0.593); height: 600px;">
-                    <div class="d-flex justify-content-center align-items-center h-100">
-                        <div class="text-white">
-                            <form class="order" action="/orders/createOrder/" method="POST">
-                                <input type="text" placeholder="Enter Name" name="clientName">
-                                <br>
-                                <br>
-                                <ul class="list-group list-group-light">
-                                    <label for="coffeeTypeContainer">Coffee Type</label>
-                                    <hr>
-                                    <li class="list-group-item">
-                                        <input class="form-check-input" type="checkbox" value="Latte" name="coffeeType">
-                                        <label for="coffee">Latte</label>
-                                        <input class="form-check-input" type="checkbox" value="Cold Brew"
-                                            name="coffeeType">
-                                        <label for="coffee">Cold Brew</label>
-                                        <input class="form-check-input" type="checkbox" value="Iced Coffee"
-                                            name="coffeeType">
-                                        <label for="coffee">Iced Coffee</label>
-                                        <input class="form-check-input" type="checkbox" value="Hot Coffee"
-                                            name="coffeeType">
-                                        <label for="coffee">Hot Coffee</label>
-                                    </li>
-                                    <br>
-                                    <label for="milkOptions">Milk Options</label>
-                                    <hr>
-                                    <li class="list-group-item">
-                                        <input class="form-check-input" type="checkbox" value="Oat Milk"
-                                            name="milkOptions">
-                                        <label for="milk">Oat Milk</label>
-                                        <input class="form-check-input" type="checkbox" value="Almond Milk"
-                                            name="milkOptions">
-                                        <label for="milk">Almond Milk</label>
-                                        <input class="form-check-input" type="checkbox" value="Coconut Milk"
-                                            name="milkOptions">
-                                        <label for="milk">Coconut Milk</label>
-                                        <input class="form-check-input" type="checkbox" value="2% Milk"
-                                            name="milkOptions">
-                                        <label for="milk">2% Milk</label>
-                                    </li>
-                                    <br>
-                                    <label for="flavorShot">Flavor Shots</label>
-                                    <hr>
-                                    <li class="list-group-item">
-                                        <input class="form-check-input" type="checkbox" value="Hazelnut"
-                                            name="flavorShot">
-                                        <label for="flavor">Hazelnut</label>
-                                        <input class="form-check-input" type="checkbox" value="Caramel"
-                                            name="flavorShot">
-                                        <label for="flavor">Caramel</label>
-                                        <input class="form-check-input" type="checkbox" value="Vanilla"
-                                            name="flavorShot">
-                                        <label for="flavor">Vanilla</label>
-                                        <input class="form-check-input" type="checkbox" value="Pistachio"
-                                            name="flavorShot">
-                                        <label for="flavor">Pistachio</label>
-                                    </li>
-                                </ul>
-                                <br>
-                                <select class="Size custom-select" name="size">
-                                    <option selected>Select Size</option>
-                                    <option value="Small">Small</option>
-                                    <option value="Medium">Medium</option>
-                                    <option value="Large">Large</option>
-                                </select>
+            <div class="p-5 text-center bg-image rounded-5">
+                <div class="mask rounded-3"
+                    style="background-color: rgba(82, 76, 74, 0.715); 
+                    height:auto; 
+                    width:auto;">
+                    <h1><a class="dripped" style="background-image: url('imgs/png.png');">Dripped</a></h1>
+                    <h4>Your Neighborhood Barista App</h4>
+                    <br>
+                    <div class="d-flex justify-content-center align-items-center h-400">
+                        
+                        <form class="order" action="/orders/createOrder/" method="POST">
+                            <input type="text" placeholder="Enter Name" name="clientName" style="margin: 1%;">
+                            <br>
+                            
+                            <ul class="list-group">
+                                <label class="form-check-label customizeCoffee" for="coffeeTypeContainer">Customize Your Coffee</label>
+                                <hr>
+                                <li class="list-group-item text-white">
+                                    <input class="form-check-input me-1" type="checkbox" value="Latte"
+                                        name="coffeeType">
+                                    <label class="form-check-label" for="coffee">Latte</label>
+                                </li>
+                                <li class="list-group-item text-white left-side">
+                                    <input class="form-check-input me-1" type="checkbox" value="Cold Brew"
+                                        name="coffeeType">
+                                    <label for="coffee">Cold Brew</label>
+                                </li>
+                                <li class="list-group-item text-white">
+                                    <input class="form-check-input me-1" type="checkbox" value="Iced Coffee"
+                                        name="coffeeType">
+                                    <label for="coffee">Iced Coffee</label>
+                                </li>
+                                <li class="list-group-item text-white">
+                                    <input class="form-check-input me-1" type="checkbox" value="Hot Coffee"
+                                        name="coffeeType">
+                                    <label for="coffee">Hot Coffee</label>
+                                </li>
+                            </ul>
+                            <br>
+                            <ul class="list-group list-group-horizontal">
+                                <li class="list-group-item text-white">
+                                    <input class="form-check-input me-1" type="checkbox" value="Oat Milk"
+                                        name="milkOptions">
+                                    <label for="milk">Oat Milk</label>
+                                </li>
+                                <li class="list-group-item text-white">
+                                    <input class="form-check-input me-1" type="checkbox" value="Almond Milk"
+                                        name="milkOptions">
+                                    <label for="milk">Almond Milk</label>
+                                </li>
+                                <li class="list-group-item text-white">
+                                    <input class="form-check-input me-1" type="checkbox" value="Coconut Milk"
+                                        name="milkOptions">
+                                    <label for="milk">Coconut Milk</label>
+                                </li>
+                                <li class="list-group-item text-white">
+                                    <input class="form-check-input me-1" type="checkbox" value="2% Milk"
+                                        name="milkOptions">
+                                    <label for="milk">2% Milk</label>
+                                </li>
+                            </ul>
 
-                                <button type="submit">Submit</button>
-                            </form>
-                        </div>
+                            <br>
+                            <ul class="list-group justify-content-between list-group-horizontal">
+                                <li class="list-group-item text-white">
+                                    <input class="form-check-input me-1" type="checkbox" value="Hazelnut"
+                                        name="flavorShot">
+                                    <label for="flavor">Hazelnut</label>
+                                </li>
+
+                                <li class="list-group-item text-white">
+                                    <input class="form-check-input me-1" type="checkbox" value="Caramel"
+                                        name="flavorShot">
+                                    <label for="flavor">Caramel</label>
+                                </li>
+
+
+                                <li class="list-group-item text-white">
+                                    <input class="form-check-input me-1" type="checkbox" value="Vanilla"
+                                        name="flavorShot">
+                                    <label for="flavor">Vanilla</label>
+                                </li>
+
+                                <li class="list-group-item text-white">
+                                    <input class="form-check-input me-1" type="checkbox" value="Pistachio"
+                                        name="flavorShot">
+                                    <label for="flavor">Pistachio</label>
+                                </li>
+
+                            </ul>
+
+                            </ul>
+                            <br>
+                            <select class="Size custom-select" name="size">
+                                <option selected>Select Size</option>
+                                <option value="Small">Small</option>
+                                <option value="Medium">Medium</option>
+                                <option value="Large">Large</option>
+                            </select>
+
+                            <button class="submit btn-sm btn-light" type="submit">Submit</button>
+                        </form>
                     </div>
                 </div>
             </div>
-
-
-
-
-
-
-
         </div>
+
+
+
+
+
+
+
+    </div>
 
 
 

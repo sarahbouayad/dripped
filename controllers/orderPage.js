@@ -26,8 +26,6 @@ module.exports = {
         coffeeType: req.body.coffeeType,
         milkOptions: req.body.milkOptions,
         flavorShot: req.body.flavorShot,
-   
-
        });
     } catch (err) {
       console.log(err);
